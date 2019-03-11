@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/auth', 'Auth\SocialLiteController@index');
+Route::get('/auth/login', 'Auth\SocialLiteController@login');
+Route::get('/auth/callback', 'Auth\SocialLiteController@callback');
